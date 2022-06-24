@@ -13,8 +13,11 @@ require (
 	github.com/gobwas/httphead v0.1.0 // indirect
 	github.com/gobwas/pool v0.2.1 // indirect
 	github.com/gobwas/ws v1.1.0 // indirect
+	github.com/gookit/color v1.5.1 // indirect
 	github.com/josharian/intern v1.0.0 // indirect
+	github.com/justhyped/OrderedForm v0.0.0-20220421103738-9ffca981c2d7 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
+	github.com/xo/terminfo v0.0.0-20210125001918-ca9a967f8778 // indirect
 	github.com/ysmood/goob v0.4.0 // indirect
 	github.com/ysmood/gson v0.7.1 // indirect
 	github.com/ysmood/leakless v0.7.0 // indirect

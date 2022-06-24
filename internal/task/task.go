@@ -24,7 +24,7 @@ type Task interface {
 	Context() context.Context
 }
 
-type TaskBase struct {
+type Base struct {
 	// ID Of the tasks !
 	ID string
 	// Delay between each critical requests
@@ -41,10 +41,10 @@ type TaskBase struct {
 }
 
 // New creates a new TaskBase and sets our initial values
-func New(id string) *TaskBase {
+func New(id string) *Base {
 	ctx, cancel := context.WithCancel(context.Background())
 
-	taskBase := &TaskBase{
+	taskBase := &Base{
 		ID:      id,
 		Client:  client.New(ctx),
 		context: ctx,
@@ -54,18 +54,18 @@ func New(id string) *TaskBase {
 	return taskBase
 }
 
-func (t *TaskBase) Stop() {
-	t.cancel()
+func (b *Base) Stop() {
+	b.cancel()
 
 }
 
 // Context returns the task context
-func (t *TaskBase) Context() context.Context {
-	return t.context
+func (b *Base) Context() context.Context {
+	return b.context
 }
 
 // RunTask runs a specific task
-func RunTask(t Task) {
+func RunTask(b Task) {
 	defer func() {
 		if err := recover(); err != nil {
 			log.Println(err)
@@ -77,13 +77,13 @@ func RunTask(t Task) {
 	for {
 		select {
 		default:
-			state, err = t.Next(state)
+			state, err = b.Next(state)
 
 			if err != nil {
 				log.Println(err)
 				return
 			}
-		case <-t.Context().Done():
+		case <-b.Context().Done():
 			return
 		}
 	}
