@@ -46,7 +46,7 @@ func (t *ScottyTask) submitSensor(amount int) {
 func (t *ScottyTask) postSensor(sensorData string) bool {
 	data := fmt.Sprintf(`{"sensor_data": "%v"}`, sensorData)
 
-	request, err := http.NewRequest("POST", "https://www.scottycameron.com"+t.parameters.AkamaiSensor, strings.NewReader(data))
+	request, err := http.NewRequest("POST", "https://www.scottycameron.com"+t.parameters.AkamaiSensorUrl, strings.NewReader(data))
 	if err != nil {
 		log.Println("Post Sensor: Failed to create request.")
 		return false
@@ -122,7 +122,7 @@ func (t *ScottyTask) generatePayload() *string {
 }
 
 func (t *ScottyTask) getAkamaiSensorEP() task.State {
-	request, err := http.NewRequest("GET", "https://www.scottycameron.com"+t.parameters.AkamaiSensor, nil)
+	request, err := http.NewRequest("GET", "https://www.scottycameron.com"+t.parameters.AkamaiSensorUrl, nil)
 	if err != nil {
 		return FailedGetAkamai
 	}
@@ -154,5 +154,5 @@ func (t *ScottyTask) getAkamaiSensorEP() task.State {
 	}
 
 	t.submitSensor(3)
-	return t.getSession2()
+	return GetPixel
 }

@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-func TestModule(t *testing.T) {
+func TestTest(t *testing.T) {
 	harv := harvester.New("harvester", "https://www.scottycameron.com/")
 	go func() {
 		err := harv.Initialize()
@@ -18,17 +18,17 @@ func TestModule(t *testing.T) {
 	defer harv.Destroy()
 
 	module := ScottyTask{
-		TaskBase:   task.New("test"),
+		Base:       task.New("test"),
 		parameters: Parameters{},
 		options: Options{
 			Sku:        "33700",
 			CategoryID: "51",
-			harvester:  harv,
 		},
 		account: account.Account{
 			Email:    "test@hoku.app",
 			Password: "Cool!2345",
 		},
+		harvester: harv,
 	}
 
 	task.RunTask(&module)
