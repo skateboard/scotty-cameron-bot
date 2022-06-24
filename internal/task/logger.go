@@ -6,24 +6,6 @@ import (
 	"log"
 )
 
-//func TaskLog(message string, clr string, ID string) {
-//	go func() {
-//		switch clr {
-//		case "cyan":
-//			log.Println(Cyan(fmt.Sprintf("[Task %s] %s", ID, message)))
-//		case "blue":
-//			log.Println(Blue(fmt.Sprintf("[Task %s] %s", ID, message)))
-//		case "red":
-//			log.Println(Red(fmt.Sprintf("[Task %s] %s", ID, message)))
-//		case "yellow":
-//			log.Println(Yellow(fmt.Sprintf("[Task %s] %s", ID, message)))
-//		case "green":
-//			log.Println(Green(fmt.Sprintf("[Task %s] %s", ID, message)))
-//		}
-//	}()
-//
-//}
-
 var (
 	Red    = color.FgRed.Render
 	Green  = color.FgGreen.Render
