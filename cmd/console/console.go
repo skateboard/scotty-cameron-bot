@@ -9,6 +9,11 @@ import (
 
 var (
 	consoleMutex = sync.Mutex{}
+
+	version   = ""
+	checkouts = 0
+	carts     = 0
+	errors    = 0
 )
 
 func SetConsoleTitle(title string) (int, error) {
@@ -28,7 +33,53 @@ func SetConsoleTitle(title string) (int, error) {
 func SetBase(ver string) {
 	consoleMutex.Lock()
 	defer consoleMutex.Unlock()
-	_, err := SetConsoleTitle(fmt.Sprintf("Scotty %v", ver))
+
+	version = ver
+	_, err := SetConsoleTitle(fmt.Sprintf("Scotty %v | Checkouts: %v | Carts: %v | Errors: %v", ver, checkouts, carts, errors))
+	if err != nil {
+		return
+	}
+}
+
+func IncreaseCheckouts() {
+	consoleMutex.Lock()
+	defer consoleMutex.Unlock()
+
+	checkouts++
+	_, err := SetConsoleTitle(fmt.Sprintf("Scotty %v | Checkouts: %v | Carts: %v | Errors: %v", version, checkouts, carts, errors))
+	if err != nil {
+		return
+	}
+}
+
+func IncreaseCarts() {
+	consoleMutex.Lock()
+	defer consoleMutex.Unlock()
+
+	carts++
+	_, err := SetConsoleTitle(fmt.Sprintf("Scotty %v | Checkouts: %v | Carts: %v | Errors: %v", version, checkouts, carts, errors))
+	if err != nil {
+		return
+	}
+}
+
+func IncreaseErrors() {
+	consoleMutex.Lock()
+	defer consoleMutex.Unlock()
+
+	errors++
+	_, err := SetConsoleTitle(fmt.Sprintf("Scotty %v | Checkouts: %v | Carts: %v | Errors: %v", version, checkouts, carts, errors))
+	if err != nil {
+		return
+	}
+}
+
+func DecreaseCarts() {
+	consoleMutex.Lock()
+	defer consoleMutex.Unlock()
+
+	checkouts--
+	_, err := SetConsoleTitle(fmt.Sprintf("Scotty %v | Checkouts: %v | Carts: %v | Errors: %v", version, checkouts, carts, errors))
 	if err != nil {
 		return
 	}

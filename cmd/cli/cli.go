@@ -1,6 +1,6 @@
 package cli
 
-import "Scotty/cmd/console"
+import "github.com/skateboard/scotty-cameron-bot/cmd/console"
 
 type Cli struct {
 	User    string

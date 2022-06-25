@@ -1,4 +1,4 @@
-module Scotty
+module github.com/skateboard/scotty-cameron-bot
 
 go 1.18
 

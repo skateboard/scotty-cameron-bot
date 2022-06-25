@@ -1,8 +1,8 @@
 package task
 
 import (
-	"Scotty/internal/client"
 	"context"
+	"github.com/skateboard/scotty-cameron-bot/internal/client"
 	"log"
 )
 

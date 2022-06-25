@@ -1,6 +1,6 @@
 package main
 
-import "Scotty/cmd/cli"
+import "github.com/skateboard/scotty-cameron-bot/cmd/cli"
 
 func main() {
 	c := cli.New("Scotty", "0.0.1")
