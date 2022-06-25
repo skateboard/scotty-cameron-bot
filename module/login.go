@@ -1,10 +1,10 @@
 package module
 
 import (
-	"Scotty/internal/task"
 	"fmt"
 	"github.com/drizzleaio/http"
 	"github.com/justhyped/OrderedForm"
+	"github.com/skateboard/scotty-cameron-bot/internal/task"
 	"strings"
 )
 

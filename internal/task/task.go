@@ -27,8 +27,6 @@ type Task interface {
 type Base struct {
 	// ID Of the tasks !
 	ID string
-	// Delay between each critical requests
-	Delay int
 
 	// context the context of the task
 	// considered bad practice but for our use-case I

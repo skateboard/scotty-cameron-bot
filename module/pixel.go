@@ -1,11 +1,11 @@
 package module
 
 import (
-	"Scotty/internal/task"
 	"bytes"
 	"encoding/base64"
 	"encoding/json"
 	"github.com/drizzleaio/http"
+	"github.com/skateboard/scotty-cameron-bot/internal/task"
 	"log"
 	"regexp"
 	"strconv"

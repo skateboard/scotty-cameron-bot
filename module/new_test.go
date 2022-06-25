@@ -1,9 +1,9 @@
 package module
 
 import (
-	"Scotty/internal/account"
-	"Scotty/internal/harvester"
-	"Scotty/internal/task"
+	"github.com/skateboard/scotty-cameron-bot/internal/account"
+	"github.com/skateboard/scotty-cameron-bot/internal/harvester"
+	"github.com/skateboard/scotty-cameron-bot/internal/task"
 	"testing"
 )
 
